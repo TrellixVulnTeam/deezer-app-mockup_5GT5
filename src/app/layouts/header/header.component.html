@@ -1,0 +1,13 @@
+<header class="header">
+  <app-avatar class="header__avatar"></app-avatar>
+  <div class="header__search">
+    <label for="search"></label>
+    <input
+      id="search"
+      type="text"
+      [(ngModel)]="artist"
+      placeholder="Search favorite artist"
+      (keyup)="search(artist)"
+    />
+  </div>
+</header>

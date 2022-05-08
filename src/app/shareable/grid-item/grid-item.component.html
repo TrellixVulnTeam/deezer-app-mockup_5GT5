@@ -1,0 +1,20 @@
+<div class="grid-item">
+  <div class="grid-item__image-wrapper">
+    <img
+      [attr.src]="
+        item.artwork !== null
+          ? item.artwork
+          : '/assets/images/album-placeholder.png'
+      "
+      alt="Album artwork"
+      itemprop="image"
+      class="grid-item__image"
+    />
+  </div>
+  <div *ngIf="hasDescription" class="grid-item__info">
+    <a routerLink="{{ gridLink }}" class="grid-item__info--title">
+      <h3>{{ item.name | uppercase }}</h3></a
+    >
+    <p class="grid-item__info--subtitle">{{ item.fansCount }} Fans</p>
+  </div>
+</div>

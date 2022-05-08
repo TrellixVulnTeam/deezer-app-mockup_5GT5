@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color_primary: #061b32;
+  --color_secondary: #182130;
+  --color_success: #297715;
+  --color_info: #007b93;
+  --color_warning: #9b4901;
+  --color_danger: #9e1947;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-inputs: #d8d8d8;
+  --color-text: #d8d8d8;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+// Default body styles
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color_primary);
+  width: 100%;
+  overflow: hidden;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 0.5rem;
+
+  small {
+    line-height: 0;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 0.1875rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+  text-rendering: inherit;
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+a {
+  line-height: inherit;
+  color: var(--color-text);
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+  }
+
+  img {
+    border: 0;
+  }
+}
+
+img {
+  // Get rid of gap under images by making them display: inline-block; by default
+  display: inline-block;
+  vertical-align: middle;
+
+  // Grid defaults to get images and embeds to work properly
+  max-width: 100%;
+  height: auto;
+}
+
+// Reset <button> styles created by most browsers
+button {
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  line-height: 1;
+  font-size: 100%;
+}
+
+section,
+input {
+  width: 100%;
+}
+
+input {
+  box-sizing: border-box;
+  background-color: var(--color-inputs);
+  color: var(--color-black);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1.25rem;
+}

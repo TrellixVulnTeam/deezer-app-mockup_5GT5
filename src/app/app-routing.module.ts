@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ArtistPageComponent } from './artist-page/artist-page.component';
-import { SearchPageComponent } from './search-page/search-page.component';
 
 //TODO:-> Fix router outlet issue
 const routes: Routes = [
@@ -12,48 +10,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'artist',
+    path: '',
     loadChildren: () =>
-      import('./search-page/search-page.module').then(
-        (m) => m.SearchPageModule
-      ),
+      import('./artists/artists.module').then((m) => m.ArtistsModule),
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'artist',
-  //   pathMatch: 'full',
-  // },
-  // {
-  //   path: 'artist',
-  //   loadChildren: () =>
-  //     import('./search-page/search-page.module').then(
-  //       (m) => m.SearchPageModule
-  //     ),
-  // },
-  // {
-  //   path: 'artist',
-  //   loadChildren: () =>
-  //     import('./artist-page/artist-page.module').then(
-  //       (m) => m.ArtistPageModule
-  //     ),
-  // },
-  // children: [
-  //   {
-  //     path: 'search',
-  //     loadChildren: () =>
-  //       import('./search-page/search-page.module').then(
-  //         (m) => m.SearchPageModule
-  //       ),
-  //   },
-  //   {
-  //     path: 'artist',
-  //     loadChildren: () =>
-  //       import('./artist-page/artist-page.module').then(
-  //         (m) => m.ArtistPageModule
-  //       ),
-  //   },
-  // ],
-  // },
 ];
 
 @NgModule({

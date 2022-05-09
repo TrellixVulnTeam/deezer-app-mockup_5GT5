@@ -11,9 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'artists',
-    component: ListComponent,
-    // pathMatch: 'full',
     children: [
+      {
+        path: '',
+        component: ListComponent,
+      },
       {
         path: ':id',
         component: DetailComponent,

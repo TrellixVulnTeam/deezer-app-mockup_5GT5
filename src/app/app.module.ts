@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ShareableModule } from './shareable/shareable.module';
-import { SearchPageModule } from './search-page/search-page.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -22,7 +21,6 @@ import { SearchPageModule } from './search-page/search-page.module';
     BrowserAnimationsModule,
     FormsModule,
     ShareableModule,
-    SearchPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

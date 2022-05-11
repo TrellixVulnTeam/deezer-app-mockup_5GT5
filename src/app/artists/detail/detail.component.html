@@ -1,10 +1,26 @@
 <section class="artist-detail">
-  <div>
-    <div>
-      <!-- <app-grid-item [hasDescription]="false" [item]="artist"></app-grid-item> -->
-      <!-- THE ARTIST: {{ artist.name }} -->
+  <button type="button" (click)="navigateBack()">Show All Artists</button>
+  <div class="artist-detail__wrapper">
+    <div class="artist-detail__banner">
+      <app-grid-item
+        [hasDescription]="false"
+        [item]="artist"
+        [isBanner]="isBanner"
+      ></app-grid-item>
     </div>
-    <div>Artist's top tracks</div>
+    <div class="artist-detail__toptracks">Artist's top tracks</div>
   </div>
-  <div>Artist's albums</div>
+  <div class="artist-detail__albums">
+    <div class="artist-detail__albums--header">
+      <h1>Albums</h1>
+    </div>
+    <div class="artist-detail__albums--albumlist">
+      <div
+        *ngFor="let album of artist.album"
+        class="artist-detail__albums--albumlist-inner"
+      >
+        <app-grid-item [gridLink]="album.id" [item]="album"></app-grid-item>
+      </div>
+    </div>
+  </div>
 </section>

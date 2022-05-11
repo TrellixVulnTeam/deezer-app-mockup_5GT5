@@ -1,0 +1,38 @@
+.artist-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 1.875rem;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__banner {
+    flex: 1;
+    max-width: 60%;
+  }
+
+  &__toptracks {
+  }
+
+  &__albums {
+    position: relative;
+    padding: 2.5rem;
+
+    &--header {
+    }
+    &--albumlist {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+
+      &-inner {
+        flex-basis: 33%;
+        max-width: 25rem;
+        padding: 0.625rem 2.5rem;
+      }
+    }
+  }
+}

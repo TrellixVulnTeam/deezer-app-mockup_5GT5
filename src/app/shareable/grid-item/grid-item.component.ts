@@ -9,8 +9,12 @@ export class GridItemComponent implements OnInit {
   @Input() gridLink: any;
   @Input() item: any;
   @Input() hasDescription: boolean = true;
+  @Input() _class: any;
+  @Input() isBanner: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('THE ITEM', this.item);
+  }
 }

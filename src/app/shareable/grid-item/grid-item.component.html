@@ -1,5 +1,8 @@
 <div class="grid-item">
-  <div class="grid-item__image-wrapper">
+  <div
+    class="grid-item__image-wrapper"
+    [ngClass]="[isBanner ? 'is--banner' : '']"
+  >
     <img
       [attr.src]="
         item.artwork !== null
@@ -11,10 +14,26 @@
       class="grid-item__image"
     />
   </div>
-  <div *ngIf="hasDescription" class="grid-item__info">
-    <a routerLink="{{ gridLink }}" class="grid-item__info--title">
-      <h3>{{ item.name | uppercase }}</h3></a
+  <div
+    class="grid-item__info"
+    [ngClass]="[isBanner ? 'is--within-banner' : '']"
+  >
+    <a
+      *ngIf="gridLink"
+      routerLink="{{ gridLink }}"
+      class="grid-item__info--title"
     >
-    <p class="grid-item__info--subtitle">{{ item.fansCount }} Fans</p>
+      <h3>{{ item.name }}</h3></a
+    >
+    <p *ngIf="item.fansCount" class="grid-item__info--subtitle">
+      {{ item.fansCount }} Fans
+    </p>
+
+    <span *ngIF="item.title" class="grid-item__info--title no-transform">
+      <h3>{{ item.title }}</h3>
+    </span>
+    <p *ngIF="item.year" class="grid-item__info--subtitle">
+      {{ item.year }}
+    </p>
   </div>
 </div>

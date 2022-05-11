@@ -23,6 +23,12 @@
       padding-top: 100%;
       z-index: -1;
     }
+
+    &.is--banner  {
+      &:before {
+        padding-top: 50%;
+      }
+    }
   }
 
   &__image {
@@ -43,10 +49,39 @@
     padding-top: 0.625rem;
 
     &--title {
+      text-transform: uppercase;
+
+      &.no-transform,
+      .is--within-banner & {
+        pointer-events: none;
+        text-transform: none;
+      }
     }
 
     &--subtitle {
       opacity: 0.5;
+
+      .is--within-banner & {
+        position: relative;
+        opacity: 1;
+        padding-bottom: 0.3125rem;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 16.25rem;
+          bottom: 0;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+
+    &.is--within-banner {
+      position: absolute;
+      top: 20%;
+      padding: 0 1.25rem;
+      max-width: 50%;
     }
   }
 }

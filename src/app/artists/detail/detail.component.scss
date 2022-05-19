@@ -4,6 +4,11 @@
   padding: 1.875rem;
   width: 100%;
 
+  h1 {
+    font-weight: bold;
+    color: var(--color-white);
+  }
+
   &__wrapper {
     display: flex;
   }
@@ -14,6 +19,14 @@
   }
 
   &__toptracks {
+    padding: 0 1rem;
+    flex: 0 1 40%;
+    border: 1px solid var(--color-inputs);
+
+    h4 {
+      font-weight: bold;
+      color: var(--color-white);
+    }
   }
 
   &__albums {

@@ -18,13 +18,9 @@
     class="grid-item__info"
     [ngClass]="[isBanner ? 'is--within-banner' : '']"
   >
-    <a
-      *ngIf="gridLink"
-      routerLink="{{ gridLink }}"
-      class="grid-item__info--title"
-    >
-      <h3>{{ item.name }}</h3></a
-    >
+    <a routerLink="{{ gridLink }}" class="grid-item__info--title">
+      <h3>{{ item.name }}</h3>
+    </a>
     <p *ngIf="item.fansCount" class="grid-item__info--subtitle">
       {{ item.fansCount }} Fans
     </p>

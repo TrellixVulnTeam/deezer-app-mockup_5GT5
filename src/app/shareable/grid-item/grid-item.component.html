@@ -5,8 +5,8 @@
   >
     <img
       [attr.src]="
-        item.artwork !== null
-          ? item.artwork
+        item.picture_xl !== null
+          ? item.picture_xl
           : '/assets/images/album-placeholder.png'
       "
       alt="Album artwork"
@@ -21,8 +21,8 @@
     <a routerLink="{{ gridLink }}" class="grid-item__info--title">
       <h3>{{ item.name }}</h3>
     </a>
-    <p *ngIf="item.fansCount" class="grid-item__info--subtitle">
-      {{ item.fansCount }} Fans
+    <p *ngIf="item.nb_fan" class="grid-item__info--subtitle">
+      {{ item.nb_fan }} Fans
     </p>
 
     <span *ngIF="item.title" class="grid-item__info--title no-transform">

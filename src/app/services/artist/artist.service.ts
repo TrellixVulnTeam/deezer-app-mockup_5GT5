@@ -16,12 +16,9 @@ export class ArtistService {
     const queryItem = query.trim();
 
     console.log('THE QUERY', queryItem);
-    // const searchArtists = `${CORS}/${DEEZER_API}search/q='eminem'`;
-    const searchArtists = `${DEEZER_API}/search_artist`;
+    const searchArtists = `${DEEZER_API}/search-artist`;
 
-    return this.http.post<Artist[]>(searchArtists, {
-      query: queryItem,
-    });
+    return this.http.get<Artist[]>(searchArtists);
   }
 
   getArtist(id: number): Observable<Artist> {

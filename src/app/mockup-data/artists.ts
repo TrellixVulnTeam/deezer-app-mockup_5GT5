@@ -4,6 +4,8 @@ export const ARTISTS: Artist[] = [
   {
     id: 1,
     name: 'Burna Boy',
+    nb_album: 1,
+    tracklist: '',
     album: [
       {
         id: 1,
@@ -13,8 +15,12 @@ export const ARTISTS: Artist[] = [
         artwork: null,
       },
     ],
-    fansCount: 930000,
-    artwork: '/assets/images/artists/burna-boy.png',
+    nb_fan: 930000,
+    picture: '/assets/images/artists/burna-boy.png',
+    picture_big: '/assets/images/artists/burna-boy.png',
+    picture_medium: '/assets/images/artists/burna-boy.png',
+    picture_small: '/assets/images/artists/burna-boy.png',
+    picture_xl: '/assets/images/artists/burna-boy.png',
     tracks: [
       {
         id: 1,
@@ -46,6 +52,8 @@ export const ARTISTS: Artist[] = [
   {
     id: 2,
     name: 'Adekune Gold',
+    nb_album: 1,
+    tracklist: '',
     album: [
       {
         id: 1,
@@ -55,8 +63,12 @@ export const ARTISTS: Artist[] = [
         artwork: null,
       },
     ],
-    fansCount: 63000,
-    artwork: '/assets/images/artists/adekune-gold.png',
+    nb_fan: 63000,
+    picture: '/assets/images/artists/adekune-gold.png',
+    picture_big: '/assets/images/artists/adekune-gold.png',
+    picture_medium: '/assets/images/artists/adekune-gold.png',
+    picture_small: '/assets/images/artists/adekune-gold.png',
+    picture_xl: '/assets/images/artists/adekune-gold.png',
     tracks: [
       {
         id: 1,
@@ -88,6 +100,8 @@ export const ARTISTS: Artist[] = [
   {
     id: 3,
     name: 'Bruno Mars',
+    nb_album: 1,
+    tracklist: '',
     album: [
       {
         id: 1,
@@ -97,8 +111,12 @@ export const ARTISTS: Artist[] = [
         artwork: null,
       },
     ],
-    fansCount: 1280000,
-    artwork: null,
+    nb_fan: 1280000,
+    picture: null,
+    picture_big: null,
+    picture_medium: null,
+    picture_small: null,
+    picture_xl: null,
     tracks: [
       {
         id: 1,

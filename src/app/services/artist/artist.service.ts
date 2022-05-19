@@ -27,7 +27,7 @@ export class ArtistService {
     // return this.http.get(artistUrl);
     // For now, assume that a hero with the specified `id` always exists.
     // Error handling will be added in the next step of the tutorial.
-    const artist = ARTISTS.find((h) => h.id === id)!;
+    const artist = ARTISTS.find((h) => h.data.id === id)!;
     return of(artist);
   }
 }

@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Artist } from 'src/app/interfaces/artist-details';
+import { map, tap } from 'rxjs/operators';
+import { Artist, Artists } from 'src/app/interfaces/artist-details';
 import { ARTISTS } from 'src/app/mockup-data/artists';
 
 const DEEZER_API = `http://localhost:3000`;
@@ -12,22 +13,30 @@ const DEEZER_API = `http://localhost:3000`;
 export class ArtistService {
   constructor(private http: HttpClient) {}
 
-  getArtists(query: string): Observable<Artist[]> {
-    const queryItem = query.trim();
+  allArtists: any;
 
-    console.log('THE QUERY', queryItem);
-    const searchArtists = `${DEEZER_API}/search-artist`;
+  getArtists(query: string): Observable<Artists> {
+    console.log('THE QUERY', query);
+    let searchArtists = `${DEEZER_API}/search-artist`;
 
-    return this.http.get<Artist[]>(searchArtists);
+    if (query) {
+      searchArtists = `${DEEZER_API}/search-artist?query=${query}`;
+    }
+
+    console.log('THE RESP:', searchArtists);
+    //TODO:-> check error of data response not being of Artist data type return this.http.get<Artist[]>(searchArtists);
+    return this.http.get<Artists>(searchArtists).pipe(
+      map((res: Artists) => {
+        console.log('THE RES', res);
+        this.allArtists = res;
+        return this.allArtists;
+      })
+    );
   }
 
   getArtist(id: number): Observable<Artist> {
-    // const artistUrl = `${DEEZER_API}/${id}`;
+    const searchArtist = `${DEEZER_API}/artist?id=${id}`;
 
-    // return this.http.get(artistUrl);
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    const artist = ARTISTS.find((h) => h.data.id === id)!;
-    return of(artist);
+    return this.http.get<Artist>(searchArtist);
   }
 }

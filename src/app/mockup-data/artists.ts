@@ -2,7 +2,7 @@ import { Artist } from '../interfaces/artist-details';
 
 export const ARTISTS: Artist[] = [
   {
-    data: {
+   
       id: 1,
       name: 'Burna Boy',
       nb_album: 1,
@@ -49,10 +49,9 @@ export const ARTISTS: Artist[] = [
           duration: '04:24',
         },
       ],
-    },
+   
   },
   {
-    data: {
       id: 2,
       name: 'Adekune Gold',
       nb_album: 1,
@@ -99,10 +98,9 @@ export const ARTISTS: Artist[] = [
           duration: '04:24',
         },
       ],
-    },
+  
   },
   {
-    data: {
       id: 3,
       name: 'Bruno Mars',
       nb_album: 1,
@@ -149,6 +147,6 @@ export const ARTISTS: Artist[] = [
           duration: '04:24',
         },
       ],
-    },
+    
   },
 ];

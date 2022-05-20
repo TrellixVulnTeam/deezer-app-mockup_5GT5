@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Artist, Artists } from 'src/app/interfaces/artist-details';
 import { ARTISTS } from '../../mockup-data/artists';
 import { ArtistService } from '../../services/artist/artist.service';
 
@@ -8,7 +10,9 @@ import { ArtistService } from '../../services/artist/artist.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  artists = ARTISTS;
+  //artists = ARTISTS;
+  artists: Artist[] = [];
+  //artists: any;
 
   constructor(private artistService: ArtistService) {}
 
@@ -17,9 +21,13 @@ export class ListComponent implements OnInit {
   }
 
   getArtists(): void {
-    this.artistService.getArtists('').subscribe((artists) => {
-      console.log(artists);
-      this.artists = artists;
-    });
+    //TODO:-> Update artists data based on search
+    if (!Array.isArray(this.artistService.allArtists)) {
+      this.artistService.getArtists('').subscribe((res: Artists) => {
+        console.log(res);
+
+        this.artists = res.data;
+      });
+    }
   }
 }

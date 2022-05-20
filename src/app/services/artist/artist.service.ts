@@ -16,6 +16,7 @@ export class ArtistService {
   allArtists: any;
 
   getArtists(query: string): Observable<Artists> {
+    //TODO:-> Add query validation/security checks
     console.log('THE QUERY', query);
     let searchArtists = `${DEEZER_API}/search-artist`;
 

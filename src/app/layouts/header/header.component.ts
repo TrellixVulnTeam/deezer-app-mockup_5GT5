@@ -16,6 +16,10 @@ export class HeaderComponent implements OnInit {
 
   search(value: string): void {
     //TODO:-> Add debounce time
-    this.artistService.getArtists(value);
+    console.log('THE VALUE', value);
+    this.artistService.getArtists(value).subscribe((artist) => {
+      console.log('THE ARTIST DETAILS', artist);
+      // this.artist = artist;
+    });
   }
 }

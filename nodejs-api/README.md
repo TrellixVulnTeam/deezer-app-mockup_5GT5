@@ -2,6 +2,10 @@
 
 This repository A NodeJS Express based REST API to proxy data from the deezer api
 
+## STARTING THE APPLICATION
+
+To start the server, simply run: `npm start` and it should run on `localhost/3000`
+
 ## MIDDLEWARES USED
 
 1. bodyparser - to get contents of the http request body

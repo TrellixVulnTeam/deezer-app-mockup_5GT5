@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
   }
 
   getArtists(): void {
-    //TODO:-> Update artists data based on search
+    //TODO:-> Update artists data based on search -> add state management
     if (!Array.isArray(this.artistService.allArtists)) {
       this.artistService.getArtists('').subscribe((res: Artists) => {
         console.log(res);

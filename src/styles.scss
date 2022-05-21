@@ -18,7 +18,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 html {
@@ -48,7 +48,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color_primary);
   width: 100%;
-  overflow: hidden;
 }
 
 div,
@@ -81,7 +80,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   margin-bottom: 0.5rem;

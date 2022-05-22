@@ -29,7 +29,7 @@
       <h3>{{ item.title }}</h3>
     </span>
     <p *ngIf="item.release_date" class="grid-item__info--subtitle">
-      {{ item.release_date }}
+      {{ item.release_date | date: 'yyyy' }}
     </p>
   </div>
 </div>

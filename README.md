@@ -61,6 +61,9 @@ You are also welcome to create a fresh Angular Project from your local environme
 Deezer API reference
 https://developers.deezer.com/api
 
+Deezer Mockup API Proxy Reference
+https://github.com/normanmunge/deezer-app-mockup/tree/main/nodejs-api
+
 <br />
 
 EXAMPLE

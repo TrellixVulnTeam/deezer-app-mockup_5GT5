@@ -11,6 +11,7 @@
 
   &__wrapper {
     display: flex;
+    padding-top: 1.25rem;
   }
 
   &__banner {
@@ -21,7 +22,7 @@
   &__toptracks {
     padding: 0 1rem;
     flex: 0 1 40%;
-    border: 1px solid var(--color-inputs);
+    // border: 1px solid var(--color-inputs);
 
     h4 {
       font-weight: bold;
@@ -31,7 +32,7 @@
 
   &__albums {
     position: relative;
-    padding: 2.5rem;
+    padding: 2.5rem 0;
 
     &--header {
     }
@@ -45,6 +46,23 @@
         flex-basis: 33%;
         max-width: 25rem;
         padding: 0.625rem 2.5rem;
+      }
+    }
+  }
+
+  &__showall {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.25rem;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &--text {
+      color: var(--color-white);
+      opacity: 0.6;
+      &.is--right-aligned {
+        cursor: pointer;
       }
     }
   }

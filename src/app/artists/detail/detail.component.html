@@ -1,5 +1,14 @@
 <section class="artist-detail">
-  <button type="button" (click)="navigateBack()">Show All Artists</button>
+  <div class="artist-detail__showall">
+    <span class="artist-detail__showall--text is--left-aligned">
+      Explore other artists!
+    </span>
+    <span
+      class="artist-detail__showall--text is--right-aligned"
+      (click)="navigateBack()"
+      >Show All</span
+    >
+  </div>
   <div class="artist-detail__wrapper">
     <div class="artist-detail__banner">
       <app-grid-item
@@ -8,22 +17,34 @@
         [isBanner]="isBanner"
       ></app-grid-item>
     </div>
-    <div class="artist-detail__toptracks">
-      <h4>Top tracks</h4>
-      <app-track-item></app-track-item>
-      <app-track-item></app-track-item>
-      <app-track-item></app-track-item>
-      <app-track-item></app-track-item>
-      <app-track-item></app-track-item>
+    <div
+      *ngIf="artist.tracks && artist.tracks.length"
+      class="artist-detail__toptracks"
+    >
+      <h4>Top Tracks</h4>
+      <app-track-item [isHeader]="true"></app-track-item>
+      <div
+        *ngFor="let track of artist.tracks; let i = index"
+        class="artist-detail__toptracks--wrapper"
+      >
+        <app-track-item
+          [item]="track"
+          [isIndex]="i + 1"
+          [isLast]="i === artist.tracks.length - 1"
+        ></app-track-item>
+      </div>
     </div>
   </div>
-  <div class="artist-detail__albums">
+  <div
+    *ngIf="artist.albums && artist.albums.length"
+    class="artist-detail__albums"
+  >
     <div class="artist-detail__albums--header">
       <h1>Albums</h1>
     </div>
     <div class="artist-detail__albums--albumlist">
       <div
-        *ngFor="let album of artist.album"
+        *ngFor="let album of artist.albums"
         class="artist-detail__albums--albumlist-inner"
       >
         <app-grid-item [gridLink]="album.id" [item]="album"></app-grid-item>

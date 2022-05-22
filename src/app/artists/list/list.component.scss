@@ -2,12 +2,35 @@
   position: relative;
   padding: 0.625rem 4.6875rem;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &--title {
+      h1 {
+        font-weight: 900;
+        letter-spacing: 0.1875rem;
+        color: var(--color-white);
+        text-align: left;
+      }
+    }
+
+    &--subtitle {
+      text-align: left;
+      color: var(--color-white);
+      opacity: 0.6;
+      padding-bottom: 0.625rem;
+    }
+  }
+
   &__albumlist {
     &--row {
       position: relative;
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      padding-top: 0.625rem;
     }
     &--inner {
       flex-basis: 33%;

@@ -1,4 +1,12 @@
 <section class="list">
+  <div class="list__header">
+    <span class="list__header--title">
+      <h1>Artists</h1>
+    </span>
+    <span class="list__header--subtitle"
+      >Providing you with A-Class Talent!</span
+    >
+  </div>
   <div class="list__albumlist--row">
     <div *ngFor="let artist of artists" class="list__albumlist--inner">
       <app-grid-item [gridLink]="artist.id" [item]="artist"></app-grid-item>

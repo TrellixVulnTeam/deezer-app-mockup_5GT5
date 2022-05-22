@@ -1,7 +1,7 @@
 export interface Album {
   id: number;
   title: string;
-  year: any;
+  release_date: any;
   trackCount: number;
-  artwork: any;
+  cover_xl: any;
 }

@@ -17,4 +17,5 @@ export interface Artist {
   tracklist?: any;
   nb_album?: number;
   tracks?: Track[];
+  albums?: Album[];
 }

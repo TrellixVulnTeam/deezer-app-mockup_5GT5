@@ -14,20 +14,9 @@ app.use(express.json());
 
 app.use(cors());
 
-const SEARCH_ALL_ARTISTS_API_SERVICE_URL = `${API_BASE_URL}/search/artist?q=''`;
+const SEARCH_ALL_ARTISTS_API_SERVICE_URL = `${API_BASE_URL}/search/artist?order=ARTIST_ASC&q='a'`;
 const SEARCH_ARTIST_API_SERVICE_URL = `${API_BASE_URL}/search/artist`;
 const SEARCH_ARTIST_BY_ID_API_SERVICE_URL = `${API_BASE_URL}/artist`;
-
-// app.use(
-//   '/search-artist',
-//   createProxyMiddleware({
-//     target: SEARCH_ALL_ARTISTS_API_SERVICE_URL,
-//     changeOrigin: true,
-//     pathRewrite: {
-//       [`^/search-artist`]: '',
-//     },
-//   })
-// );
 
 app.get('/search-artist', async (req, res) => {
   let artist_name = req.query.query;
@@ -63,20 +52,30 @@ app.get('/artist', async (req, res) => {
       if (typeof artist_data === 'object') {
         artist_details.data = artist_data;
 
-        if (typeof artist_data.tracklist === 'string') {
-          axios
-            .get(artist_data.tracklist)
-            .then((resp) => {
-              artist_details.data.tracks = resp.data;
-              return res.send(artist_details);
-            })
-            .catch((err) => {
-              console.log('ERROR FETCHING ARTIST TRACKS', err);
-              res.send('Error Fetching Artists tracks');
-            });
-        }
+        //get the artists top tracks
+        axios
+          .get(`${SEARCH_ARTIST_BY_ID_API_SERVICE_URL}/${artist_id}/top`)
+          .then((resp) => {
+            console.log('THE ARTISTS TOP TRACKS', resp);
+            artist_details.data.tracks = resp.data.data;
+          })
+          .then(() => {
+            axios
+              .get(`${SEARCH_ARTIST_BY_ID_API_SERVICE_URL}/${artist_id}/albums`)
+              .then((response) => {
+                artist_details.data.albums = response.data.data;
+                return res.send(artist_details);
+              })
+              .catch((err) => {
+                console.log('ERROR FETCHING ARTISTS Albums', err);
+                res.send('Error Fetching Artists Albums');
+              });
+          })
+          .catch((err) => {
+            console.log('ERROR FETCHING ARTISTS TOP TRACKS', err);
+            res.send('Error Fetching Artists Tracks');
+          });
       } else {
-        // console.log('THE FINAL ARTIST DETAILS', artist_details);
         return res.send(artist_details);
       }
     })

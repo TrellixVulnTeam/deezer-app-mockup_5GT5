@@ -1,5 +1,14 @@
-<div class="track-item">
-  <div class="track-item__index">1.</div>
-  <div class="track-item__title">In my room</div>
-  <div class="track-item__duration">02:54</div>
+<div
+  *ngIf="isHeader"
+  class="track-item"
+  [ngClass]="[isHeader ? 'is--header' : '']"
+>
+  <div class="track-item__index">#</div>
+  <div class="track-item__title">Title</div>
+  <div class="track-item__duration">Duration</div>
+</div>
+<div *ngIf="item" class="track-item" [ngClass]="isLast ? 'is--last-item' : ''">
+  <div class="track-item__index">{{ isIndex }}</div>
+  <div class="track-item__title">{{ item.title }}</div>
+  <div class="track-item__duration">{{ item.duration }}</div>
 </div>

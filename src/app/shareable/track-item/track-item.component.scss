@@ -2,9 +2,24 @@
   display: flex;
   position: relative;
   padding: 1.25rem;
-  color: var(--color-white);
-  border-bottom: 1px solid var(--color-inputs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   flex: 0 1 40%;
+  opacity: 0.6;
+
+  &.is--last-item {
+    border-bottom: none;
+  }
+
+  &__index,
+  &__title,
+  &__duration {
+    color: var(--color-white);
+
+    .is--header & {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
 
   &__index {
     width: 1.25rem;

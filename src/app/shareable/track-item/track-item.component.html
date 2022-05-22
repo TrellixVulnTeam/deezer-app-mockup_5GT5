@@ -10,5 +10,5 @@
 <div *ngIf="item" class="track-item" [ngClass]="isLast ? 'is--last-item' : ''">
   <div class="track-item__index">{{ isIndex }}</div>
   <div class="track-item__title">{{ item.title }}</div>
-  <div class="track-item__duration">{{ item.duration }}</div>
+  <div class="track-item__duration">{{ item.duration | duration }}</div>
 </div>

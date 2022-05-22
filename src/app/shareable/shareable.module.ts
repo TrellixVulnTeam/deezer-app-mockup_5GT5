@@ -5,6 +5,7 @@ import { GridItemComponent } from './grid-item/grid-item.component';
 import { BannerSlideComponent } from './banner-slide/banner-slide.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { RouterModule } from '@angular/router';
+import { DurationPipe } from '../pipes/duration/duration.pipe';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
     GridItemComponent,
     BannerSlideComponent,
     AvatarComponent,
+    DurationPipe,
   ],
   exports: [
     TrackItemComponent,

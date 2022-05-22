@@ -1,12 +1,12 @@
-<div class="grid-item">
+<div class="grid-item" [ngClass]="[isBanner ? 'is--banner' : '']">
   <div
     class="grid-item__image-wrapper"
     [ngClass]="[isBanner ? 'is--banner' : '']"
   >
     <img
       [attr.src]="
-        item.picture_xl !== null
-          ? item.picture_xl
+        item.picture_xl !== null || item.cover_xl !== null
+          ? item.picture_xl || item.cover_xl
           : '/assets/images/album-placeholder.png'
       "
       alt="Album artwork"
@@ -25,11 +25,11 @@
       {{ item.nb_fan }} Fans
     </p>
 
-    <span *ngIF="item.title" class="grid-item__info--title no-transform">
+    <span *ngIf="item.title" class="grid-item__info--title">
       <h3>{{ item.title }}</h3>
     </span>
-    <p *ngIF="item.year" class="grid-item__info--subtitle">
-      {{ item.year }}
+    <p *ngIf="item.release_date" class="grid-item__info--subtitle">
+      {{ item.release_date }}
     </p>
   </div>
 </div>
